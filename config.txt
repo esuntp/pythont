@@ -1,0 +1,13 @@
+enable
+configure terminal
+hostname S5
+enable password cisco
+username ehsan password 0 cisco
+interface Vlan1
+no shutdown
+ip address 192.168.122.245 255.255.255.0
+line vty 0 4
+ login local
+ transport input all
+ do wr
+end

@@ -6,6 +6,7 @@ HOST = input("Enter device name to configure: ")
 user = input("Enter your remote account: ")
 password = getpass.getpass()
 
+
 tn = telnetlib.Telnet(HOST)
 
 tn.read_until(b"Username: ")
