@@ -11,7 +11,7 @@ f = open('mySwitches')
 for IP in f:
     IP = IP.strip()
     HOST = str(IP)
-    print("gGet running config from switch " + HOST)
+    print("Get running config from switch " + HOST)
     tn = telnetlib.Telnet(HOST)
     tn.read_until(b"Username: ")
     tn.write(user.encode('ascii') + b"\n")
@@ -29,6 +29,7 @@ for IP in f:
     saveOutput.write(readOutput.decode('ascii'))
     saveOutput.write("\n")
     saveOutput.close()
+    print("Backup for switch " + HOST + " has done!")
 
 
 

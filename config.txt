@@ -11,3 +11,13 @@ line vty 0 4
  transport input all
  do wr
 end
+
+
+enable
+configure terminal
+line vty 0 4
+login local
+transport input all
+ip domain-name ehsanpython.com.au
+crypto key generate rsa
+
