@@ -8,7 +8,7 @@ ios_l2 = {
 }
 
 with open('cisco_conf_file') as configFile:
-    lines = configFile.read()
+    lines = configFile.read().splitlines()
 print(lines)
 
 net_connect = ConnectHandler(**ios_l2)
