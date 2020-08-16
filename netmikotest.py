@@ -19,6 +19,6 @@ print(output)
 
 for n in range(29, 20):
     print('Creating VLAN' + str(n))
-    config_commands: List[str] = ['vlan ' + str(n), 'name Python_SSH_VLAN ' + str(n)]
+    config_commands = ['vlan ' + str(n), 'name Python_SSH_VLAN ' + str(n)]
     output = net_connect.send_config_set(config_commands)
     print(output)
