@@ -12,5 +12,5 @@ with open('cisco_conf_file') as configFile:
 print(lines)
 
 net_connect = ConnectHandler(**ios_l2)
-output = net_connect.send_command(lines)
+output = net_connect.send_config_set(lines)
 print(output)
