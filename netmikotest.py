@@ -1,3 +1,5 @@
+from typing import List
+
 from netmiko import ConnectHandler
 
 ios_l2 = {
@@ -11,13 +13,12 @@ net_connect = ConnectHandler(**ios_l2)
 output = net_connect.send_command('show ip interface brief')
 print(output)
 
-config_commands = ['int loop 0', 'ip address 1.1.1.1 255.255.255.0']
+config_commands: List[str] = ['int loop 0', 'ip address 1.1.1.1 255.255.255.0']
 output = net_connect.send_config_set(config_commands)
 print(output)
 
-for n in range (20,29):
+for n in range(29, 20):
     print('Creating VLAN' + str(n))
-    config_commands = ['vlan' + str(n), 'name Python_SSH_VLAN ' + str(n)]
+    config_commands: List[str] = ['vlan ' + str(n), 'name Python_SSH_VLAN ' + str(n)]
     output = net_connect.send_config_set(config_commands)
     print(output)
-
